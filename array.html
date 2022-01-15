@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      {
+        // Looping
+
+        const name = ["Fizar", "Rama", "Waluyo"];
+        //static method di array
+        name.forEach((value, index) => console.info(`${index} : ${value}`));
+      }
+
+      {
+        //Queue
+        const queue = [];
+        // push untuk menambahkan data ke paling akhir
+        queue.push("Fizar");
+        queue.push("Rama");
+        queue.push("Waluyo");
+
+        console.info(queue);
+
+        // shift untuk menghapus data array paling depan
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+      }
+
+      {
+        //Stack
+        const stack = [];
+        stack.push("Fizar");
+        stack.push("Rama");
+        stack.push("Waluyo");
+
+        // Pop untuk menghapus data paling akhir
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+      }
+
+      {
+        //Array Search
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        //   find untuk mencari data sesuai kondisi
+        //   dan diambil data pertama setelah ditemukan
+        console.info(source.find((value) => value > 3)); //4
+        // findIndex untuk mencari data sesuai kondisi dan return indexnya
+        console.info(source.findIndex((value) => value > 3)); //3
+        //includes untuk mencari apakah data tertera pada array
+        console.info(source.includes(7)); //false
+        console.info(source.indexOf(5)); // 4
+        console.info(source.lastIndexOf(5)); // 9
+      }
+
+      {
+        //Array Filter
+        const filter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const genap = filter.filter((value) => value % 2 == 0);
+        const ganjil = filter.filter((value) => value % 2 == 1);
+
+        console.info(filter);
+        console.info(genap);
+        console.info(ganjil);
+      }
+
+      {
+        //Array Transform
+        const fizarname = ["Fizar", "Rama", "Waluyo"];
+        const fizarUpperCase = fizarname.map((value) => value.toUpperCase());
+        console.info(fizarUpperCase);
+
+        //Reduce
+        console.info(fizarname.reduce((before, value) => before + " " + value));
+        console.info(
+          fizarname.reduceRight((before, value) => before + " " + value)
+        );
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.info(numbers.reduce((before, value) => before + value));
+      }
+    </script>
+  </body>
+</html>
